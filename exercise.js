@@ -1,9 +1,9 @@
 const person = {
   id: 1,
-  name: 'Mario',
-  surname: 'Rossi',
-  old: 25
+  firstname: 'Mario',
+  lastname: 'Rossi',
+  age: 25
 };
 
-const { id, name, surname, old } = person;
+const { id, firstname: name, lastname: surname, age: old } = person;
 console.log(id, name, surname, old);
