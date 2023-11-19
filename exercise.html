@@ -1,0 +1,24 @@
+<html>
+  <body>
+    <div id="container" style="display: flex; align-items: center;">
+      <h2></h2>
+      <input type="checkbox">
+    </div>
+  </body>
+</html>
+
+<script>
+  // code here
+  async function getToDo() {
+
+    let resorce = await fetch("https://jsonplaceholder.typicode.com/todos/4");
+    let todo = await resorce.json();
+
+    const h2 = document.querySelector('h2');
+    h2.innerHTML = todo.title
+
+    const input = document.querySelector('input');
+    input.checked = todo.completed;
+  }
+  getToDo()
+</script>
