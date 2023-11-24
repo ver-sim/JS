@@ -1,0 +1,24 @@
+<html>
+  <body>
+    <div id="container" style="display: flex; align-items: center;"></div>
+  </body>
+</html>
+
+<script>
+  async function getToDoList() {
+
+    const ul = document.createElement("ul");
+    const container = document.querySelector("#container").appendChild(ul);
+    
+    let resp = await fetch("https://jsonplaceholder.typicode.com/todos");
+    let json = await resp.json();
+    let li = "";
+
+    json.forEach(element => {
+      li += `<li class="todo-list">${element.title}</li>`
+    });
+   
+    container.innerHTML = li;
+  }
+  getToDoList();
+</script>
